@@ -1,24 +1,19 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { TaskProvider } from './context/TaskContext';
+import TaskPage from './TaskPage'; 
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <TaskProvider>
+      <div className="App">
+        {/* השם שראית מקודם */}
+        <h1 style={{ textAlign: 'center' }}>FocusFlow</h1> 
+        
+        {/* כאן אנחנו קוראים למסך המשימות שבנינו */}
+        <TaskPage /> 
+        
+      </div>
+    </TaskProvider>
   );
 }
 
